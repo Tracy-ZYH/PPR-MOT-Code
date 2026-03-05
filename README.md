@@ -1,5 +1,6 @@
 # Cognitive-Inspired Top-Down Framework for Open-World Referring Multi-Object Tracking (PPR-MOT)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18871798.svg)](https://doi.org/10.5281/zenodo.18871798)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Official implementation of **PPR-MOT**, a training-free, modular framework that reformulates Referring Multi-Object Tracking (RMOT) as a top-down cognitive process. 
@@ -130,6 +131,7 @@ If you find this repository useful, please cite:
   journal={The Visual Computer},
   year={2026},
   note={Under Review},
+  doi={10.5281/zenodo.18871798},
   url={https://github.com/Tracy-ZYH/PPR-MOT}
 }
 ```
