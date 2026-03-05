@@ -1,0 +1,34 @@
+# PPR-MOT Configuration Settings
+
+# Perception Module Weights & Configs
+models:
+  gd_config: "weights/GroundingDINO_SwinB_cfg.py"
+  gd_weights: "weights/groundingdino_swinb_cogcoor.pth"
+  qwen_model_name: "qwen-vl-max"
+
+# Module Hyperparameters
+pam:
+  box_threshold: 0.35
+  track_threshold: 0.35
+  match_threshold: 0.8
+  track_buffer: 30
+
+crm:
+  reasoning_model: "qwen-max"
+  fps: 10
+  max_frames_context: 10 
+
+# LLM API Configuration
+api:
+  deepseek_key: ""  # Your DeepSeek API Key
+  deepseek_base: "https://api.deepseek.com/v1"
+  qwen_key: ""      # Your DashScope (Qwen) API Key
+  qwen_base: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+# Dataset Paths
+paths:
+  refer_kitti: "data/Refer-KITTI"
+  template_config: "config/reasoning_templates.yaml"
+  output_dir: "outputs"
+
+  

@@ -1,0 +1,30 @@
+qpm_template:
+  system_role: "You are an expert instruction analyst for a visual multi-object tracking system."
+  description: "Decompose the natural language query into structured semantic components."
+  prompt: |
+    User Query: "{user_query}"
+    
+    Task: Deconstruct the query into the following JSON format:
+    {{
+      "appearance_semantics": "static visual attributes (category, color, clothing)",
+      "spatial_semantics": "relative positions or relations (left, right, front)",
+      "temporal_semantics": "motion patterns and behaviors (turning, braking, accelerating)",
+      "expert_strategy": "easy (simple categories) or hard (fine-grained details)"
+    }}
+    
+    Constraint: Ensure the output is a strict JSON object.
+
+crm_template:
+  system_role: "You are an expert AI for spatio-temporal reasoning in autonomous driving."
+  description: "Validate if a candidate trajectory matches the behavioral descriptions."
+  logic_hints:
+    standing: "speed < 10 pixels/sec"
+    braking: "acceleration_projection < -20"
+    turning: "angle_change_degrees > 7"
+  prompt: |
+    Textual Description: "{contextual_details}"
+    Kinematic Summary: {kinematic_data}
+    Trajectory Frames: {track_coordinates}
+    
+    Task: Based on the kinematic evidence and description, does this trajectory match the intended behavior?
+    Output Format: {{"is_match": true/false}}
